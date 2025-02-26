@@ -1,7 +1,8 @@
 <?php
 
-require "functions.php";
+require 'functions.php';
+require 'router.php';
 
-$heading = "Home";
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-require "views/index.view.php";
+routeToController($uri, $routes);
